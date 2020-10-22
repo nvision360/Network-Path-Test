@@ -1,5 +1,4 @@
 <?php
-
 class PriorityList {
 	public $next;
 	public $data;

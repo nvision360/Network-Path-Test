@@ -1,6 +1,5 @@
 <?php
 error_reporting(0);
-
 require_once("PriorityQueue.php");
 
 class Edge {
@@ -29,15 +28,13 @@ class Graph {
     
     public function removenode($index) {
 		array_splice($this->nodes, $index, 1);
-	}
-	
+	}	
 	
 	public function paths_from($from) {
 		$dist = array();
 		$dist[$from] = 0;
 		
 		$visited = array();
-		
 		$previous = array();
 		
 		$queue = array();
@@ -53,7 +50,6 @@ class Graph {
 				continue;
 			}
 			$visited[$u] = True;
-			
 		
 			foreach($nodes[$u] as $edge) {
 				
@@ -90,26 +86,19 @@ class Graph {
 		}
 		while(isset($node_dsts[$current])) {
 			$nextnode = $node_dsts[$current];
-			
 			array_push($path, $nextnode);
-			
 			$current = $nextnode;
 		}
-		
 		return array_reverse($path);
-		
 	}
 	
 	public function getpath($from, $to) {
 		list($distances, $prev) = $this->paths_from($from);
 		return $this->paths_to($prev, $to);
 	}
-	
 }
 
 function compareWeights($a, $b) {
-	return $a->data[0] - $b->data[0];
-	
-	
+	return $a->data[0] - $b->data[0];	
 }
 
