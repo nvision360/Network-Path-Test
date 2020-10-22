@@ -37,10 +37,8 @@ class PriorityQueue {
 					// newnode has higher priority
 					$newnode->next = $node;
 					if ($lastnode == null) {
-						//print "last node is null\n";
 						$this->liststart = $newnode;
 					} else {
-						//print "Debug: " . $newnode->data . " has lower priority than " . $lastnode->data . "\n";
 						$lastnode->next = $newnode;
 					}
 					$added = true;
@@ -54,8 +52,6 @@ class PriorityQueue {
 				$lastnode->next = $newnode;
 			}
 		}
-		//print "Debug: Appended node. New size=" . $this->size . "\n";
-		//$this->debug();
 	}
 	
 	function debug() {
@@ -84,8 +80,6 @@ class PriorityQueue {
 		$x = $this->peak();
 		$this->size = $this->size - 1;
 		$this->liststart = $this->liststart->next;
-		//print "Debug: Removed node. New size=" . $this->size . "\n";
-		//$this->debug();
 		return $x;
 	}
 }

@@ -53,8 +53,6 @@ function calculate() {
     $totalSec = $distances[$value];
   }
 
-  echo $totalSec.'--'.$milliSeconds;
-
   if($totalSec > $milliSeconds) {
     echo "Path not found";
   } else {
